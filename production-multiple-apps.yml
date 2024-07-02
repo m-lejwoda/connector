@@ -1,6 +1,7 @@
 services:
-  nginx:
+  connector_nginx:
     image: nginx:latest
+    container_name: connector_nginx
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:
