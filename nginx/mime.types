@@ -1,0 +1,12 @@
+types {
+    text/html                             html htm shtml;
+    text/css                              css;
+    text/xml                              xml rss;
+    image/gif                             gif;
+    image/jpeg                            jpeg jpg;
+    application/javascript                js;
+    application/atom+xml                  atom;
+    application/rss+xml                   rss;
+
+    # Dodaj inne typy MIME w razie potrzeby
+}
