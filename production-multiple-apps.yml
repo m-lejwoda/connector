@@ -7,6 +7,9 @@ services:
     container_name: connector_nginx
     volumes:
       - /app/backend/production-static:/app/backend/production-static
+      - ../my_flashcards/my_flashcards_frontend/dist:/dist
+      - ../my_flashcards/certbot/conf:/etc/letsencrypt
+      - ../my_flashcards/certbot/www:/var/www/certbot
       - ../true-effects/trueeffectsfrontend/build:/build
       - ../true-effects/certbot/conf:/etc/letsencrypt
       - ../true-effects/certbot/www:/var/www/certbot
