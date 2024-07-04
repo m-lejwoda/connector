@@ -8,11 +8,7 @@ services:
     volumes:
       - /app/backend/production-static:/app/backend/production-static
       - ../my_flashcards/my_flashcards_frontend/dist:/flashcard_dist
-#      - ../my_flashcards/certbot/conf:/etc/letsencrypt
-#      - ../my_flashcards/certbot/www:/var/www/certbot
       - ../true-effects/trueeffectsfrontend/build:/build
-#      - ../true-effects/certbot/conf:/etc/letsencrypt
-#      - ../true-effects/certbot/www:/var/www/certbot
       - ../trainer-backend/trainer_page/dist:/trainer_dist
       - ../trainer-backend/trainer_page/public:/public
       - ../web_grades_scrapper/web_grades_scrapper/dist:/scrapper_dist
@@ -31,18 +27,17 @@ services:
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
-#    command: certonly --webroot -w /var/www/certbot --force-renewal --email michal.lejwoda@gmail.com -d true-effects.pl --agree-tos
     command: >
       sh -c "
         certbot certonly --webroot -w /var/www/certbot --force-renewal --email michal.lejwoda@gmail.com -d true-effects.pl --agree-tos &&
         certbot certonly --webroot -w /var/www/certbot --force-renewal --email michal.lejwoda@gmail.com -d language-flashcards.pl --agree-tos &&
         certbot certonly --webroot -w /var/www/certbot --force-renewal --email michal.lejwoda@gmail.com -d scrapper-omi.pl --agree-tos &&
-        certbot certonly --webroot -w /var/www/certbot --force-renewal --email michal.lejwoda@gmail.com -d trener-personalny-michal.pl --agree-tos &&
+        certbot certonly --webroot -w /var/www/certbot --force-renewal --email michal.lejwoda@gmail.com -d trener-personalny-michal.pl --agree-tos
       "
     networks:
       - certificates
+
 networks:
   certificates:
   connector:
     external: true
-
