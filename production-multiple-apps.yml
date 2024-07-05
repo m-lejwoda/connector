@@ -9,8 +9,8 @@ services:
       - /app/backend/production-static:/app/backend/production-static
       - ../my_flashcards/my_flashcards_frontend/dist:/flashcard_dist
       - ../true-effects/trueeffectsfrontend/build:/build
-      - ../trainer-backend/trainer_page/dist:/trainer_dist
-      - ../trainer-backend/trainer_page/public:/public
+      - ../trainer_page/trainer_page/dist:/trainer_dist
+      - ../trainer_page/trainer_page/public:/public
       - ../web_grades_scrapper/web_grades_scrapper/dist:/scrapper_dist
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
