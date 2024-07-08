@@ -7,6 +7,4 @@ types {
     application/javascript                js;
     application/atom+xml                  atom;
     application/rss+xml                   rss;
-
-    # Dodaj inne typy MIME w razie potrzeby
 }
