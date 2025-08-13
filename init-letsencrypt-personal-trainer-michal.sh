@@ -5,7 +5,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
   exit 1
 fi
 
-domains=(trener-personalny-michal.pl www.trener-personalny-michal.pl)
+domains=(personal-trainer-michal.pl www.personal-trainer-michal.pl)
 rsa_key_size=4096
 data_path="./certbot"
 email="michal.lejwoda@gmail.com"
