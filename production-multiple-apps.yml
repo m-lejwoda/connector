@@ -17,6 +17,7 @@ services:
       - ../web_grades_scrapper/web_grades_scrapper/dist:/scrapper_dist
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
+      - /etc/letsencrypt:/etc/letsencrypt:ro
     ports:
       - 80:80
       - 443:443
