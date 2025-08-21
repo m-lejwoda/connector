@@ -3,7 +3,10 @@ volumes:
     external: true
   production_django_media:
     external: true
-
+  production_trueeffects_static:
+    external: true
+  production_trueeffects_media:
+    external: true
 services:
   connector_nginx:
     build:
@@ -13,6 +16,8 @@ services:
     volumes:
       - production_django_static:/app/backend/production-static
       - production_django_media:/app/backend/production-media
+      - production_trueeffects_static:/app/backend/production-trueeffects-static
+      - production_trueeffects_media:/app/backend/production-trueeffects-media
       - ../my_flashcards/my_flashcards_frontend/dist:/flashcard_dist
       - ../true-effects/trueeffectsfrontend/build:/build
       - ../trainer_page/trainer_page/dist:/trainer_dist
