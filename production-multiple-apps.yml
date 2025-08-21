@@ -1,6 +1,8 @@
 volumes:
   production_django_static:
     external: true
+  production_django_media:
+    external: true
 
 services:
   connector_nginx:
@@ -10,6 +12,7 @@ services:
     container_name: connector_nginx
     volumes:
       - production_django_static:/app/backend/production-static
+      - production_django_media:/app/backend/production-media
       - ../my_flashcards/my_flashcards_frontend/dist:/flashcard_dist
       - ../true-effects/trueeffectsfrontend/build:/build
       - ../trainer_page/trainer_page/dist:/trainer_dist
