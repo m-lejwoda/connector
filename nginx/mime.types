@@ -8,5 +8,5 @@ types {
     application/javascript                js;
     application/atom+xml                  atom;
     application/rss+xml                   rss;
-    audio/mpeg  mp3;
+    audio/mpeg                            mp3;
 }
